@@ -1,0 +1,126 @@
+// @import "compass";
+@import url(https://fonts.googleapis.com/css?family=Abel);
+// font-family
+$baseFontFamily :"游ゴシック", YuGothic, "メイリオ",Verdana, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+
+// colors
+$baseColor: #ffffff;
+$subColor: #f5f5f5;
+$keyColor: #cccccc;
+$fontColor: #4c4c4c;
+
+
+/* Base
+------------------------------------------------------------*/
+html{ font-size: 62.5%; }
+
+body{
+  color: $fontColor;
+  font-size: 1.4rem;
+  font-family:$baseFontFamily;
+  line-height:1.6;
+  letter-spacing: 0.1em; 
+  background-color: $baseColor;
+}
+
+/* Align
+------------------------------------------------------------*/
+.text-center {
+  text-align: center;
+}
+
+/* Layout
+------------------------------------------------------------*/
+.block-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Font
+------------------------------------------------------------*/
+.abel {
+  font-family: 'Abel', sans-serif;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* Header
+------------------------------------------------------------*/
+header
+{
+  .top {
+    height: 500px;
+    background:url(../images/img_top.jpg);
+    background-size: cover;
+    background-position: center center;
+    .block-center{
+      display: block;
+      width: 100%;
+      height: 500px;
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  header{
+    .top{
+      height: 250px;
+    }
+  }
+}
+
+/* Contents
+------------------------------------------------------------*/
+
+
+#contents{
+  padding: 60px 0;
+  .container{
+    padding: 20px;
+    width: 90%;
+    margin: 0 auto;
+    @extend .block-center;
+    display: -webkit-flex;
+    display: flex;
+    .box{
+      width: 32%;
+      margin-right: 2%;
+      background-color: $subColor;
+      .box-inner{
+        color: $baseColor;
+        background-color: $keyColor;
+      }
+      &:last-child{
+      margin-right: 0;
+      }
+    }
+  }
+}
+
+/* Footer
+------------------------------------------------------------*/
+
+#footer{
+  padding: 50px;
+  background-color: $subColor;
+}
+
+
+.button{
+    font-weight: bold;
+    display: block;
+    width: 30%;
+    margin: auto;
+    padding: 5px 0;
+
+    text-align: center;
+
+    color: $baseColor;
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+    background-color: $keyColor;
+}
