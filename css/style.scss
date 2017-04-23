@@ -64,31 +64,31 @@ header
   }
 }
 
-@media (max-width: 768px) {
-  header{
-    .top{
-      height: 250px;
-    }
-  }
-}
+
 
 /* Contents
 ------------------------------------------------------------*/
 
 
+
 #contents{
   padding: 60px 0;
   .container{
+     // ボックスを縦に並べる
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    // @include display-flex;
+    // @include flex-direction(column);
     padding: 20px;
     width: 90%;
     margin: 0 auto;
     @extend .block-center;
-    display: -webkit-flex;
-    display: flex;
     .box{
       width: 32%;
       margin-right: 2%;
       background-color: $subColor;
+
       .box-inner{
         color: $baseColor;
         background-color: $keyColor;
@@ -98,7 +98,23 @@ header
       }
     }
   }
+  
 }
+
+@media (min-width: 1025px) {
+  #contents {
+    .container {
+      flex-direction:row;     // ボックスを横に並べる
+      justify-content: space-between;
+    }
+  }
+}
+
+// desktop
+@media (min-width: 1025px) {
+  
+}
+
 
 /* Footer
 ------------------------------------------------------------*/
@@ -123,4 +139,23 @@ header
        -moz-border-radius: 4px;
             border-radius: 4px;
     background-color: $keyColor;
+}
+
+
+
+@media (max-width: 768px) {
+  header{
+    .top{
+      height: 250px;
+    }
+  }
+  #contents{
+    .container{
+      .box{
+        width: auto;
+        margin-right: 0;
+        margin-bottom: 10px;
+      }  
+    }
+  } 
 }
