@@ -76,7 +76,6 @@ header
   .container{
      // ボックスを縦に並べる
     display:flex;
-    flex-direction:column;
     justify-content: space-between;
     // @include display-flex;
     // @include flex-direction(column);
@@ -101,19 +100,6 @@ header
   
 }
 
-@media (min-width: 1025px) {
-  #contents {
-    .container {
-      flex-direction:row;     // ボックスを横に並べる
-      justify-content: space-between;
-    }
-  }
-}
-
-// desktop
-@media (min-width: 1025px) {
-  
-}
 
 
 /* Footer
@@ -143,7 +129,10 @@ header
 
 
 
+
+// smart device
 @media (max-width: 768px) {
+  //画面幅768pxまではここが適用
   header{
     .top{
       height: 250px;
@@ -151,6 +140,7 @@ header
   }
   #contents{
     .container{
+      flex-direction: column;
       .box{
         width: auto;
         margin-right: 0;
